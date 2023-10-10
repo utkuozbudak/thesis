@@ -73,11 +73,6 @@ class DeepONet(BaseEstimator):
         branch_goal_function = self.T @ (U - np.outer(self.t_0, e_N))   # (32, 12000) = (p, N)
         self.branch_pipeline.fit(V.T, branch_goal_function.T) # V.T = (12000, 256) | branch_goal_function.T = (12000, 32)
 
-    def is_converged(self, current_loss):
-        if abs(self.prev_loss - current_loss) < self.tol:
-            return True
-        return False
-    
     def _pod(self, U):
         self.pod_mean = np.mean(U, axis=1, keepdims=True)
         u_svd, _, _ = np.linalg.svd(U - self.pod_mean)
@@ -86,7 +81,7 @@ class DeepONet(BaseEstimator):
     
     def _restore_output(self, pod_U):
         return pod_U @ self.pod_modes.T + self.pod_mean
-
+    
     def transform(self, V_star, epsilon):
         # Compute b(v^*) using the branch network
         b_star = self.branch_pipeline.transform(V_star.T).T  # (p, N_star)
@@ -117,3 +112,8 @@ class DeepONet(BaseEstimator):
             else:
                 V[i] /= la.norm(V[i])
         return V.T
+    
+    def is_converged(self, current_loss):
+        if abs(self.prev_loss - current_loss) < self.tol:
+            return True
+        return False
