@@ -12,7 +12,7 @@ class DeepONet(BaseEstimator):
     
     def __post_init__(self):
         self.pod_mean = None
-        self.max_iter = 1
+        self.max_iter = 10
         self.tol = 1e-6 # tolerance for convergence
         self.n_modes = 32
         self.T = None
