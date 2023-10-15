@@ -21,9 +21,9 @@ class DeepONet(BaseEstimator):
     
     def fit(self, V, U, epsilon):
         """
-        V: (12000, 256) -> m, N
-        U: (12000, 256) -> m, N
-        epsilon: (1, 256) -> 1, m
+        V: (12000, 256) -> N, m
+        U: (12000, 256) -> N, m
+        epsilon: (256, 1) -> m, 1
         p = 32
         """
         N, m = U.shape               # m = 256, N = 12000 
