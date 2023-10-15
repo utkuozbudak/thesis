@@ -27,8 +27,6 @@ class DeepONet(BaseEstimator):
         p = 32
         """
         N, m = U.shape               # m = 256, N = 12000 
-        e_N = np.ones(N)             # (12000,) = (N,)
-        e_N = e_N.reshape(-1, 1)     # (12000, 1) = (N, 1)
         
         # Step 1: Initializations
         self.set_pod(U)
