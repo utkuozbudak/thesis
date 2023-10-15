@@ -12,7 +12,7 @@ class DeepONet(BaseEstimator):
     
     def __post_init__(self):
         self.pod_mean = None
-        self.max_iter = 10
+        self.max_iter = 5
         self.tol = 1e-6 # tolerance for convergence
         self.n_modes = 32
         self.T = None
@@ -21,47 +21,48 @@ class DeepONet(BaseEstimator):
     
     def fit(self, V, U, epsilon):
         """
-        V: (256, 12000) -> m, N
-        U: (256, 12000) -> m, N
+        V: (12000, 256) -> m, N
+        U: (12000, 256) -> m, N
         epsilon: (1, 256) -> 1, m
         p = 32
         """
-        m, N = U.shape               # m = 256, N = 12000 
+        N, m = U.shape               # m = 256, N = 12000 
         e_N = np.ones(N)             # (12000,) = (N,)
         e_N = e_N.reshape(-1, 1)     # (12000, 1) = (N, 1)
         
         # Step 1: Initializations
-        self.t_0 = np.mean(U, axis=1)     # (256,) = (m,)
-        self.T = self._pod(U).T           # (32, 256) = (p, m)
+        self.set_pod(U)
+        self.t_0 = np.mean(U, axis=0)     # (256,) = (m,)
+        self.T = self.apply_pod(U)        # (12000, 32) = (N, p)
         
         for iteration in range(self.max_iter):
             # Step 2: Find the weights for the branch network
-            branch_goal_function = self.T @ (U - np.outer(self.t_0, e_N))   # (32, 12000) = (p, N)
-            self.branch_pipeline.fit(V.T, branch_goal_function.T) # V.T = (12000, 256) | branch_goal_function.T = (12000, 32)
+            self.branch_pipeline.fit(V, self.T)
             
             # Step 3: Compute B_tilda, which is b(V) with the new weights
-            B_tilda = self.branch_pipeline.transform(V.T).T       # (32, 12000) = (p, N)
+            B_tilda = self.branch_pipeline.transform(V)  # (12000, 32) = (N, p)
             
             # Step 4: Set b^0 and B^0
-            b_0 = np.mean(U, axis=1, keepdims=True)  # (256, 1) = (m, 1)
+            b_0 = np.mean(U, axis=0, keepdims=True)        # (1, 256) = (1, m)
             # Orthogonalize B_tilda
-            B_0 = self.orthogonalize(B_tilda)        # (32, 12000) = (p, N)
+            B_0, _ = np.linalg.qr(B_tilda, mode='reduced') # (12000, 32) = (N, p)
             
             # Step 5: Find the weights for the trunk network
-            goal_functions_trunk = B_0 @ ((U - np.outer(b_0, e_N)).T) # (32, 256) = (p, m)
-            self.trunk_pipeline.fit(epsilon.T, goal_functions_trunk.T) # epsilon.T = (256, 1) | goal_functions_trunk.T = (256, 32)
+            reduced = (U - b_0).T
+            goal_functions_trunk = reduced @ B_0 # (256, 12000) x (12000, 32) = (256, 32)
+            self.trunk_pipeline.fit(epsilon, goal_functions_trunk) # epsilon = (256, 1) | goal_functions_trunk = (256, 32)
         
             # Step 6: Compute T_tilda, which is t(epsilon) with the new weights
-            T_tilda = self.trunk_pipeline.transform(epsilon.T).T # T_tilda shape = (32, 256) = (p, m)
+            T_tilda = self.trunk_pipeline.transform(epsilon) # T_tilda shape = (256, 32) = (m, p)
             
             # Step 7: Keep the same t_0 and set T^1 = orthogonalize(T_tilda)
-            self.T = self.orthogonalize(T_tilda)
+            self.T, _ = np.linalg.qr(T_tilda, mode='reduced')  # (256, 32) = (m, p)
             
-            # Check for convergence
+            # Check for convergence using the relative L2 loss
             predictions = self.transform(V, epsilon)
-            current_loss = np.mean((U - predictions)**2)
+            current_loss = np.sum(la.norm(U - predictions, axis=1) / la.norm(U, axis=1)) / N
+            print(f"Iteration {iteration} | Relative L2 Loss: {current_loss}")
             
-            print(f"Iteration {iteration} | Loss: {current_loss}")
             if self.is_converged(current_loss):
                 print(f"Converged after {iteration} iterations | Loss: {current_loss}")
                 break
@@ -70,50 +71,36 @@ class DeepONet(BaseEstimator):
             self.prev_loss = current_loss
         
         # After the loop, execute step 2 one final time
-        branch_goal_function = self.T @ (U - np.outer(self.t_0, e_N))   # (32, 12000) = (p, N)
-        self.branch_pipeline.fit(V.T, branch_goal_function.T) # V.T = (12000, 256) | branch_goal_function.T = (12000, 32)
-
-    def _pod(self, U):
-        self.pod_mean = np.mean(U, axis=1, keepdims=True)
-        u_svd, _, _ = np.linalg.svd(U - self.pod_mean)
-        self.pod_modes = u_svd[:, :self.n_modes]
-        return self.pod_modes
+        self.branch_pipeline.fit(V, self.T)
+        
+    def set_pod(self, U):
+        mean = U.mean(axis=0)
+        shifted = U - mean
+        _, _, vh = np.linalg.svd(shifted)
+        self.pod_mean = mean
+        self.pod_modes = vh.T[:, :self.n_modes]
+        
+    def apply_pod(self, U):
+        return (U - self.pod_mean) @ self.pod_modes
     
-    def _restore_output(self, pod_U):
+    def restore_pod(self, pod_U):
         return pod_U @ self.pod_modes.T + self.pod_mean
     
-    def transform(self, V_star, epsilon):
-        # Compute b(v^*) using the branch network
-        b_star = self.branch_pipeline.transform(V_star.T).T  # (p, N_star)
-
-        # Compute the prediction 
-        predictions = np.zeros((epsilon.shape[1], V_star.shape[1]))  # Initialize the predictions matrix (m x N_star)
-
-        for j in range(self.n_modes):
-            for k in range(V_star.shape[1]):  # for each test sample
-                predictions[:, k] += self.T[j, :] * b_star[j, k]
-
-        predictions += np.outer(self.t_0, np.ones(V_star.shape[1]))
+    def transform(self, X, epsilon = None):
+        b_star = self.branch_pipeline.transform(X)  # (N, 32)
+        predictions = b_star @ self.T.T  
+        predictions += self.t_0
         return predictions
 
-    def orthogonalize(self, U, eps=1e-15):
-        """ Gram Schmidt orthogonalization of the columns of U."""
-        n = len(U[0])
-        # numpy can readily reference rows using indices, but referencing full rows is a little
-        # dirty. So, work with transpose(U)
-        V = U.T
-        for i in range(n):
-            prev_basis = V[0:i]     # orthonormal basis before V[i]
-            coeff_vec = np.dot(prev_basis, V[i].T)  # each entry is np.dot(V[j], V[i]) for all j < i
-            # subtract projections of V[i] onto already determined basis V[0:i]
-            V[i] -= np.dot(coeff_vec, prev_basis).T
-            if la.norm(V[i]) < eps:
-                V[i][V[i] < eps] = 0.   # set the small entries to 0
-            else:
-                V[i] /= la.norm(V[i])
-        return V.T
-    
     def is_converged(self, current_loss):
         if abs(self.prev_loss - current_loss) < self.tol:
             return True
         return False
+    
+    def transform_branch(self, x):
+        """ Used for testing POD implementation. This is not the original transform method"""
+        prediction = self.branch_pipeline.transform(x)
+        print(f"b prediction shape: {prediction.shape}")
+        restored = self.restore_pod(prediction)
+        print(f"b restored shape: {restored.shape}")
+        return restored

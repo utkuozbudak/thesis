@@ -8,7 +8,7 @@ import numpy as np
 @dataclass
 class DeepONetPOD(BaseEstimator):
     pipeline: Pipeline
-    n_modes: int = None
+    n_modes: int = 32
     
     def __post_init__(self):
         self.pod_modes = None 
