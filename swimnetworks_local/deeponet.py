@@ -18,6 +18,7 @@ class DeepONet(BaseEstimator):
         self.T = None
         self.t_0 = None
         self.prev_loss = float('inf')
+        self.pod_modes = None
     
     def fit(self, V, U, epsilon):
         """
@@ -25,17 +26,18 @@ class DeepONet(BaseEstimator):
         U: (12000, 256) -> N, m
         epsilon: (256, 1) -> m, 1
         p = 32
-        """
+        """ 
         N, m = U.shape               # m = 256, N = 12000 
         
         # Step 1: Initializations
         self.set_pod(U)
         self.t_0 = np.mean(U, axis=0)     # (256,) = (m,)
-        self.T = self.apply_pod(U)        # (12000, 32) = (N, p)
+        self.T = self.pod_modes     # (12000, 32) = (N, p)
         
         for iteration in range(self.max_iter):
             # Step 2: Find the weights for the branch network
-            self.branch_pipeline.fit(V, self.T)
+            goal_function_branch = (U - self.t_0) @ self.T # (12000, 256) x (256, 32) = (12000, 32)
+            self.branch_pipeline.fit(V, goal_function_branch)
             
             # Step 3: Compute B_tilda, which is b(V) with the new weights
             B_tilda = self.branch_pipeline.transform(V)  # (12000, 32) = (N, p)
@@ -69,7 +71,8 @@ class DeepONet(BaseEstimator):
             self.prev_loss = current_loss
         
         # After the loop, execute step 2 one final time
-        self.branch_pipeline.fit(V, self.T)
+        goal_function_branch = (U - self.t_0) @ self.T
+        self.branch_pipeline.fit(V, goal_function_branch)
         
     def set_pod(self, U):
         mean = U.mean(axis=0)
@@ -85,8 +88,8 @@ class DeepONet(BaseEstimator):
         return pod_U @ self.pod_modes.T + self.pod_mean
     
     def transform(self, X, epsilon = None):
-        b_star = self.branch_pipeline.transform(X)  # (N, 32)
-        predictions = b_star @ self.T.T  
+        branch_output = self.branch_pipeline.transform(X)  # (N, 32)
+        predictions = branch_output @ self.T.T  
         predictions += self.t_0
         return predictions
 
