@@ -32,28 +32,27 @@ class DeepONet(BaseEstimator):
         # Step 1: Initializations
         self.set_pod(U)
         self.t_0 = np.mean(U, axis=0)     # (256,) = (m,)
-        self.T = self.pod_modes     # (12000, 32) = (N, p)
+        self.T = self.pod_modes           # (12000, 32) = (N, p)
         
         for iteration in range(self.max_iter):
             # Step 2: Find the weights for the branch network
-            goal_function_branch = (U - self.t_0) @ self.T # (12000, 256) x (256, 32) = (12000, 32)
+            goal_function_branch = (U - self.t_0) @ self.T    # (12000, 256) x (256, 32) = (12000, 32)
             self.branch_pipeline.fit(V, goal_function_branch)
             
             # Step 3: Compute B_tilda, which is b(V) with the new weights
-            B_tilda = self.branch_pipeline.transform(V)  # (12000, 32) = (N, p)
+            B_tilda = self.branch_pipeline.transform(V)       # (12000, 32) = (N, p)
             
             # Step 4: Set b^0 and B^0
-            b_0 = np.mean(U, axis=0, keepdims=True)        # (1, 256) = (1, m)
+            b_0 = np.mean(U, axis=0, keepdims=True)           # (1, 256) = (1, m)
             # Orthogonalize B_tilda
-            B_0, _ = np.linalg.qr(B_tilda, mode='reduced') # (12000, 32) = (N, p)
+            B_0, _ = np.linalg.qr(B_tilda, mode='reduced')    # (12000, 32) = (N, p)
             
             # Step 5: Find the weights for the trunk network
-            reduced = (U - b_0).T
-            goal_functions_trunk = reduced @ B_0 # (256, 12000) x (12000, 32) = (256, 32)
-            self.trunk_pipeline.fit(epsilon, goal_functions_trunk) # epsilon = (256, 1) | goal_functions_trunk = (256, 32)
+            goal_function_trunk = (U - b_0).T @ B_0           # (256, 12000) x (12000, 32) = (256, 32)
+            self.trunk_pipeline.fit(epsilon, goal_function_trunk) # epsilon = (256, 1) | goal_functions_trunk = (256, 32)
         
             # Step 6: Compute T_tilda, which is t(epsilon) with the new weights
-            T_tilda = self.trunk_pipeline.transform(epsilon) # T_tilda shape = (256, 32) = (m, p)
+            T_tilda = self.trunk_pipeline.transform(epsilon)  # T_tilda shape = (256, 32) = (m, p)
             
             # Step 7: Keep the same t_0 and set T^1 = orthogonalize(T_tilda)
             self.T, _ = np.linalg.qr(T_tilda, mode='reduced')  # (256, 32) = (m, p)
@@ -80,17 +79,19 @@ class DeepONet(BaseEstimator):
         _, _, vh = np.linalg.svd(shifted)
         self.pod_mean = mean
         self.pod_modes = vh.T[:, :self.n_modes]
-        
+    
+    """
     def apply_pod(self, U):
         return (U - self.pod_mean) @ self.pod_modes
     
     def restore_pod(self, pod_U):
         return pod_U @ self.pod_modes.T + self.pod_mean
+    """
     
     def transform(self, X, epsilon = None):
         branch_output = self.branch_pipeline.transform(X)  # (N, 32)
-        predictions = branch_output @ self.T.T  
-        predictions += self.t_0
+        predictions = branch_output @ self.T.T # (N, 32) x (32, 256) = (N, 256)
+        predictions += self.t_0 
         return predictions
 
     def is_converged(self, current_loss):
