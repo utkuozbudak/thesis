@@ -1,0 +1,78 @@
+{
+    "experiment_1_run_1": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "training_info": {
+            "iteration_1_loss": 0.7953974489165265,
+            "iteration_2_loss": 0.02060434401000823,
+            "iteration_3_loss": 0.020604344952917308,
+            "iteration_4_loss": 0.020604345826933705,
+            "iteration_5_loss": 0.020604346675892102,
+            "is_converged": true,
+            "iterations_to_convergence": 5,
+            "experiment_time": 48.201171875,
+            "seed": 1699992008
+        },
+        "test_info": {
+            "l2_mean_relative_loss": 0.020514693277559726,
+            "mse_loss": 3.5036484548902936e-05
+        }
+    },
+    "experiment_1_run_2": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "training_info": {
+            "iteration_1_loss": 0.7953970877062894,
+            "iteration_2_loss": 0.020595419382084656,
+            "iteration_3_loss": 0.02059542005837238,
+            "iteration_4_loss": 0.020595420717012553,
+            "iteration_5_loss": 0.02059542136228298,
+            "is_converged": true,
+            "iterations_to_convergence": 5,
+            "experiment_time": 45.2801079750061,
+            "seed": 1699992056
+        },
+        "test_info": {
+            "l2_mean_relative_loss": 0.020500731545940936,
+            "mse_loss": 3.492214891635382e-05
+        }
+    }
+}

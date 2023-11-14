@@ -1,0 +1,18 @@
+search_space:
+  n_modes: [8]
+
+  branch_network:
+    dense_layer:
+      layer_width: [1024]
+      activation: ["tanh"]
+      parameter_sampler: ["tanh", "relu"]
+    linear_layer:
+      regularization_scale: [1e-10]
+
+  trunk_network:
+    dense_layer:
+      layer_width: [512]
+      activation: ["tanh"]
+      parameter_sampler: ["tanh", "relu"]
+    linear_layer:
+      regularization_scale: [1e-10]
