@@ -4,3 +4,4 @@ output.png
 venv/
 data/__pycache__/
 data/burgers
+training/__pycache__
