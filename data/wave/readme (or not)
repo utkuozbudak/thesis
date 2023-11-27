@@ -1,6 +1,0 @@
-1. This is a finite difference solver for 1-d wave equation.
-2. Change domain and simulation time with parameters Lx, Nx, dt, N.
-3. rho is density, c is wave speed, will affect the wave you get.
-4. f is forcing, related parameters can be changed also.
-5. Ignore parameter gamma. It's set to 1.
-6. The wave equation is: rho u_tt = rho c^2 u_xx + f.
