@@ -5,4 +5,4 @@ venv/
 data/__pycache__/
 data/burgers
 src/training/__pycache__
-src/data/wave/
+src/data/wave
