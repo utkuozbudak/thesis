@@ -12,7 +12,7 @@ class DeepONet(BaseEstimator):
         branch_pipeline=None,
         trunk_pipeline=None,
         n_modes: int = 32,
-        max_iter: int = 5,
+        max_iter: int = 10,
         tolerance: float = 1e-6,
     ):
         self.n_modes = n_modes
@@ -44,7 +44,7 @@ class DeepONet(BaseEstimator):
         dict: A dictionary containing training results.
         """
         N, m = U.shape  # m = 256, N = 12000 for Burgers 
-
+        
         # Step 1: Initializations
         self._set_pod(U)
         self.t_0 = self.pod_mean  # (256,) = (m,)
@@ -82,8 +82,12 @@ class DeepONet(BaseEstimator):
             predictions = self.transform(V, epsilon)
             current_loss = np.sum(la.norm(U - predictions, axis=1) / la.norm(U, axis=1)) / N
             
+            # MSE loss
+            mse_loss = np.mean((U - predictions)**2)
+            
             print(f"Iteration {iteration} | Relative L2 Loss: {current_loss}")
             self.results_dict[f'iteration_{iteration}_loss'] = current_loss
+            self.results_dict[f'iteration_{iteration}_mse_loss'] = mse_loss
 
             if self._is_converged(current_loss):
                 print(f"Converged after {iteration} iterations | Loss: {current_loss}")
@@ -108,6 +112,7 @@ class DeepONet(BaseEstimator):
         _, _, vh = np.linalg.svd(shifted)
         self.pod_mean = mean
         self.pod_modes = vh.T[:, : self.n_modes]
+        print("deeponet pod modes shape:", self.pod_modes.shape)
 
     def transform(self, X, epsilon=None):
         branch_output = self.branch_pipeline.transform(X)  # (N, 32)

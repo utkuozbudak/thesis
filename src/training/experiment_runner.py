@@ -3,12 +3,13 @@ import yaml
 import itertools
 import json
 import time
-import random
+
 from datetime import datetime
 from sklearn.pipeline import Pipeline
 from src.training.deeponet import DeepONet
 from src.training.dense import Dense
 from src.training.linear import Linear
+
 class ExperimentRunner:
     
     def __init__(self):
@@ -42,33 +43,34 @@ class ExperimentRunner:
         trunk_net = Pipeline(trunk_steps)
         return branch_net, trunk_net
 
-    def _run_experiments(self, X_train, X_test, y_train, y_test, grid, num_experiments):
+    def _run_experiments(self, X_train, X_test, y_train, y_test, grid):
         results = {}
         experiment_count = 1
-
-        search_space = self.params['search_space']
-        for n_modes, branch_layer_width, trunk_layer_width, branch_activation, trunk_activation in itertools.product(
+        num_experiments = self.params['number_of_experiments']
+        search_space = self.params['search_space_deeponet']
+        
+        for n_modes, layer_width, branch_activation, trunk_activation, reg_scale in itertools.product(
                 search_space['n_modes'], 
                 search_space['branch_network']['dense_layer']['layer_width'],
-                search_space['trunk_network']['dense_layer']['layer_width'],
                 search_space['branch_network']['dense_layer']['activation'],
-                search_space['trunk_network']['dense_layer']['activation']):
+                search_space['trunk_network']['dense_layer']['activation'],
+                search_space['branch_network']['linear_layer']['regularization_scale']):
             
             branch_params = {
                 'dense_layer': {
-                    'layer_width': branch_layer_width,
+                    'layer_width': layer_width,
                     'activation': branch_activation,
                     'parameter_sampler': branch_activation
                 },
-                'linear_layer': {'regularization_scale': 1e-10}
+                'linear_layer': {'regularization_scale': float(reg_scale)}
             }
             trunk_params = {
                 'dense_layer': {
-                    'layer_width': trunk_layer_width,
+                    'layer_width': layer_width,
                     'activation': trunk_activation,
                     'parameter_sampler': trunk_activation
                 },
-                'linear_layer': {'regularization_scale': 1e-10}
+                'linear_layer': {'regularization_scale': float(reg_scale)}
             }
             
             # Current experiment information
@@ -113,13 +115,23 @@ class ExperimentRunner:
                 }
 
             experiment_count += 1
-        # save results to JSON file
-        with open('../outputs/results/model_results1.json', 'w') as file:
-            json.dump(results, file, indent=4)
+            
+        n_modes = self.params['search_space_deeponet']['n_modes']  # Assuming 'n_modes' is stored in self.params
+        if self.params['dataset'] == "burgers":
+            burgers_filename = f'../outputs/deeponet/results/burgers_results_n_{n_modes}.json'
+            with open(burgers_filename, 'w') as file:
+                json.dump(results, file, indent=4)
+        elif self.params['dataset'] == "wave":
+            wave_filename = f'../outputs/deeponet/results/wave_results_n_{n_modes}.json'
+            with open(wave_filename, 'w') as file:
+                json.dump(results, file, indent=4)
+        else:
+            raise ValueError("Invalid dataset name in params.yaml file.")
+
 
         return results
 
     @staticmethod
-    def run(X_train: np.ndarray, X_test: np.ndarray, y_train: np.ndarray, y_test: np.ndarray, grid, num_experiments):
+    def run(X_train: np.ndarray, X_test: np.ndarray, y_train: np.ndarray, y_test: np.ndarray, grid):
         runner = ExperimentRunner()
-        return runner._run_experiments(X_train, X_test, y_train, y_test, grid, num_experiments)
+        return runner._run_experiments(X_train, X_test, y_train, y_test, grid)
