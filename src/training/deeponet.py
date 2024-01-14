@@ -31,7 +31,7 @@ class DeepONet(BaseEstimator):
         self.loss_dict = {}
         self.no_improvement_count = 0
 
-    def fit(self, V, U, epsilon):
+    def fit(self, V, U, epsilon, V_test=None, U_test=None):
         """
         Fit the DeepONet model.
 
@@ -51,6 +51,7 @@ class DeepONet(BaseEstimator):
         self.T = self.pod_modes  #  = (m, p)
         
         self.results_dict = {}  # Initialize results dictionary
+        self.results_dict['test_info'] = {}  # Initialize the test_info dictionary
         self.is_converged = False  # Initialize convergence status
         
         for iteration in range(1, self.max_iter + 1):
@@ -61,6 +62,7 @@ class DeepONet(BaseEstimator):
             # u1 = transform_pod(v, epsilon)
             # Step 3: Compute B_tilda
             B_tilda = self.branch_pipeline.transform(V)
+            #print(f"B_tilda shape: {B_tilda.shape}")
 
             # Step 4: Set b^0 and B^0
             b_0 = np.mean(U, axis=0, keepdims=True)
@@ -69,25 +71,40 @@ class DeepONet(BaseEstimator):
             # Step 5: Find the weights for the trunk network
             goal_function_trunk = (U - b_0).T @ B_0
             self.trunk_pipeline.fit(epsilon, goal_function_trunk)
+            print(f"goal_function_trunk shape: {goal_function_trunk.shape}")
 
             # u2 = 
             # Step 6: Compute T_tilda
             T_tilda = self.trunk_pipeline.transform(epsilon)
+            #print(f"T_tilda shape: {T_tilda.shape}")
 
             # Step 7: Keep the same t_0 and set T^1
             self.T, _ = np.linalg.qr(T_tilda, mode="reduced") # 
-            
 
             # Check for convergence
             predictions = self.transform(V, epsilon)
-            current_loss = np.sum(la.norm(U - predictions, axis=1) / la.norm(U, axis=1)) / N
+            eps = 1e-8  # A small constant to avoid division by zero
+            current_loss = np.sum(la.norm(U - predictions, axis=1) / (la.norm(U, axis=1) + eps)) / N
+            
+            
+            test_predictions = self.transform(V_test, epsilon)
+            num_test_samples = V_test.shape[0]
+            test_loss = np.sum(la.norm(U_test - test_predictions, axis=1) / (la.norm(U_test, axis=1) + eps)) / num_test_samples
+
+            #mse_loss = np.mean((U - predictions)**2)
+            print("current loss: ", current_loss)
             
             # MSE loss
             mse_loss = np.mean((U - predictions)**2)
+            test_mse_loss = np.mean((U_test - test_predictions)**2)
             
             print(f"Iteration {iteration} | Relative L2 Loss: {current_loss}")
+            print(f"Iteration {iteration} | MSE Loss: {mse_loss}")
+            
             self.results_dict[f'iteration_{iteration}_loss'] = current_loss
             self.results_dict[f'iteration_{iteration}_mse_loss'] = mse_loss
+            self.results_dict['test_info'][f'iteration_{iteration}_test_loss'] = test_loss
+            self.results_dict['test_info'][f'iteration_{iteration}_test_mse_loss'] = test_mse_loss
 
             if self._is_converged(current_loss):
                 print(f"Converged after {iteration} iterations | Loss: {current_loss}")
@@ -112,7 +129,8 @@ class DeepONet(BaseEstimator):
         _, _, vh = np.linalg.svd(shifted)
         self.pod_mean = mean
         self.pod_modes = vh.T[:, : self.n_modes]
-        print("deeponet pod modes shape:", self.pod_modes.shape)
+        #print("deeponet pod mean shape:", self.pod_mean.shape)
+        #print("deeponet pod modes shape:", self.pod_modes.shape)
 
     def transform(self, X, epsilon=None):
         branch_output = self.branch_pipeline.transform(X)  # (N, 32)

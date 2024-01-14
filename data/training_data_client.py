@@ -4,7 +4,9 @@ from sklearn.model_selection import train_test_split
 
 class TrainingDataClient:
     @staticmethod
-    def load_training_data(dataset: str = "burgers", test_size: float = 0.2, verbose: bool = True):
+    def load_training_data(
+        dataset: str = "burgers", test_size: float = 0.2, verbose: bool = True
+    ):
         """
         Prepares training and testing data for a specified dataset.
 
@@ -25,9 +27,8 @@ class TrainingDataClient:
             X_train, X_test, y_train, y_test = train_test_split(
                 X, y, test_size=test_size, shuffle=True, random_state=42
             )
-
             grid = np.linspace(0, 2 * np.pi, 256).reshape(-1, 1)
-            
+
             if verbose:
                 # Print shapes
                 print(f"X_train shape: {X_train.shape}")
@@ -36,4 +37,20 @@ class TrainingDataClient:
                 print(f"y_test shape: {y_test.shape}")
                 print(f"grid shape: {grid.shape}")
 
+            return X_train, X_test, y_train, y_test, grid
+
+        if dataset == "wave":
+            X = np.load("../data/wave/initial_u_son.npy")
+            y = np.load("../data/wave/solutions_son.npy")
+            grid = np.load("../data/wave/grid_son.npy").reshape(-1, 1)
+            X_train, X_test, y_train, y_test = train_test_split(
+                X, y, test_size=test_size, shuffle=True, random_state=42
+            )
+            if verbose:
+                # Print shapes
+                print(f"X_train shape: {X_train.shape}")
+                print(f"X_test shape: {X_test.shape}")
+                print(f"y_train shape: {y_train.shape}")
+                print(f"y_test shape: {y_test.shape}")
+                print(f"grid shape: {grid.shape}")
             return X_train, X_test, y_train, y_test, grid

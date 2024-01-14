@@ -49,11 +49,10 @@ class ExperimentRunner:
         num_experiments = self.params['number_of_experiments']
         search_space = self.params['search_space_deeponet']
         
-        for n_modes, layer_width, branch_activation, trunk_activation, reg_scale in itertools.product(
+        for n_modes, layer_width, branch_activation, reg_scale in itertools.product(
                 search_space['n_modes'], 
                 search_space['branch_network']['dense_layer']['layer_width'],
                 search_space['branch_network']['dense_layer']['activation'],
-                search_space['trunk_network']['dense_layer']['activation'],
                 search_space['branch_network']['linear_layer']['regularization_scale']):
             
             branch_params = {
@@ -67,8 +66,8 @@ class ExperimentRunner:
             trunk_params = {
                 'dense_layer': {
                     'layer_width': layer_width,
-                    'activation': trunk_activation,
-                    'parameter_sampler': trunk_activation
+                    'activation': branch_activation, # same activation function as branch net
+                    'parameter_sampler': branch_activation # same activation function as branch net
                 },
                 'linear_layer': {'regularization_scale': float(reg_scale)}
             }
@@ -89,17 +88,27 @@ class ExperimentRunner:
                 model = DeepONet(n_modes=n_modes, branch_pipeline=branch_net, trunk_pipeline=trunk_net)
                 # fit model and save the experiment time
                 start_time = time.time()
-                results_dict = model.fit(X_train, y_train, grid)
+                results_dict = model.fit(X_train, y_train, grid, X_test, y_test)
                 end_time = time.time()
                 experiment_time = end_time - start_time
 
-                # predictions
+                # Extract test_info from the training results
+                test_info_during_training = results_dict.pop('test_info', {})
+
+                # Calculate the final test losses
                 predictions = model.transform(X_test)
-                # compute losses
-                l2_mean_relative_loss = np.mean(np.linalg.norm(predictions - y_test, axis=1) / np.linalg.norm(y_test, axis=1))
-                mse_loss = np.mean((predictions-y_test)**2)
-                
-                # save results for JSON file
+                num_test_samples = X_test.shape[0]
+                test_loss_after_training = np.sum(np.linalg.norm(predictions - y_test, axis=1) / np.linalg.norm(y_test, axis=1)) / num_test_samples
+                test_loss_after_training_mse = np.mean((predictions - y_test) ** 2)
+
+                # Merge the test_info from training with the final test loss information
+                test_info = {
+                    **test_info_during_training,
+                    'test_loss_after_training': test_loss_after_training,
+                    'test_loss_after_training_mse': test_loss_after_training_mse
+                }
+
+                # Save results for the JSON file
                 results[f"experiment_{experiment_count}_run_{i+1}"] = {
                     'n_modes': n_modes,
                     'branch_config': branch_params,
@@ -108,21 +117,18 @@ class ExperimentRunner:
                         **results_dict,
                         'experiment_time': experiment_time,
                         'random_seed': seed},
-                    'test_info': {
-                        'l2_mean_relative_loss': l2_mean_relative_loss,
-                        'mse_loss': mse_loss
-                        }
+                    'test_info': test_info
                 }
 
             experiment_count += 1
             
         n_modes = self.params['search_space_deeponet']['n_modes']  # Assuming 'n_modes' is stored in self.params
         if self.params['dataset'] == "burgers":
-            burgers_filename = f'../outputs/deeponet/results/burgers_results_n_{n_modes}.json'
+            burgers_filename = f'../outputs/burgers/results/burgers_results_n_{n_modes}.json'
             with open(burgers_filename, 'w') as file:
                 json.dump(results, file, indent=4)
         elif self.params['dataset'] == "wave":
-            wave_filename = f'../outputs/deeponet/results/wave_results_n_{n_modes}.json'
+            wave_filename = f'../outputs/wave_son/results/wave_results_n_{n_modes}.json'
             with open(wave_filename, 'w') as file:
                 json.dump(results, file, indent=4)
         else:

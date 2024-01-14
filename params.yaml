@@ -1,32 +1,21 @@
-number_of_experiments: 3 # indicates how many experiments will be run for each configuration
-dataset: "burgers" # dataset to be used
+number_of_experiments: 3
+dataset: "burgers"
 
-search_space_deeponet: # search space for the hyperparameters
-  n_modes: [64]
+search_space_deeponet:
+  n_modes: [2]
 
   branch_network:
     dense_layer:
-      layer_width: [128, 256, 512, 1024, 2048]
-      activation: ["tanh","relu"]
-      parameter_sampler: ["tanh", "relu"]
-    linear_layer:
-      regularization_scale: [1e-2, 1e-4, 1e-6, 1e-8, 1e-10]
-
-  trunk_network:
-    dense_layer:
-      layer_width: [128, 256, 512, 1024, 2048]
-      activation: ["tanh"]
-      parameter_sampler: ["tanh", "relu"]
-    linear_layer:
-      regularization_scale: [1e-2, 1e-4, 1e-6, 1e-8, 1e-10]
-
-search_space_pod_deeponet:
-  n_modes: [2]
-
-  pod_deeponet_network:
-    dense_layer:
-      layer_width: [128, 256, 512, 1024, 2048]
+      layer_width: [256, 512, 1024, 2048]
       activation: ["tanh", "relu"]
       parameter_sampler: ["tanh", "relu"]
     linear_layer:
-      regularization_scale: [1e-2, 1e-4, 1e-6, 1e-8, 1e-10]
+      regularization_scale: [1e-4, 1e-6, 1e-8, 1e-10]
+
+  trunk_network:
+    dense_layer:
+      layer_width: [256, 512, 1024, 2048]
+      activation: ["tanh", "relu"]
+      parameter_sampler: ["tanh", "relu"]
+    linear_layer:
+      regularization_scale: [1e-4, 1e-6, 1e-8, 1e-10]
