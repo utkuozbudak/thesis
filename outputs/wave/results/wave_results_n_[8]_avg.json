@@ -1,0 +1,1986 @@
+{
+    "experiment_1": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354855,
+                1704354856,
+                1704354857
+            ],
+            "iteration_1_loss": 1.0145916398237897,
+            "iteration_1_mse_loss": 0.18564004908466628,
+            "iteration_2_loss": 0.0013341220822939554,
+            "iteration_2_mse_loss": 3.8825877630662404e-07,
+            "iteration_3_loss": 0.0013341210112536859,
+            "iteration_3_mse_loss": 3.882580310229154e-07,
+            "iteration_4_loss": 0.001334122339079109,
+            "iteration_4_mse_loss": 3.882579529774478e-07,
+            "iteration_5_loss": 0.0013341232770326932,
+            "iteration_5_mse_loss": 3.8825794040615966e-07,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.5826977094014485,
+            "random_seed": 1704354856.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271925388296164,
+            "iteration_1_test_mse_loss": 0.18464794057988565,
+            "iteration_2_test_loss": 0.0013917728230345467,
+            "iteration_2_test_mse_loss": 4.2091973697464935e-07,
+            "iteration_3_test_loss": 0.0013917637655771033,
+            "iteration_3_test_mse_loss": 4.2091309703106254e-07,
+            "iteration_4_test_loss": 0.0013917628284030494,
+            "iteration_4_test_mse_loss": 4.2091178210440807e-07,
+            "iteration_5_test_loss": 0.0013917630949083837,
+            "iteration_5_test_mse_loss": 4.209114791975921e-07,
+            "test_loss_after_training": 0.0013917629560683098,
+            "test_loss_after_training_mse": 4.2091157817581326e-07
+        }
+    },
+    "experiment_2": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354857,
+                1704354858,
+                1704354858
+            ],
+            "iteration_1_loss": 1.0145909869857859,
+            "iteration_1_mse_loss": 0.18563997108837654,
+            "iteration_2_loss": 0.000129891351856118,
+            "iteration_2_mse_loss": 3.796548512526382e-09,
+            "iteration_3_loss": 0.0001298925198895125,
+            "iteration_3_mse_loss": 3.79654848241543e-09,
+            "iteration_4_loss": 0.00012989309779893978,
+            "iteration_4_mse_loss": 3.796548475066109e-09,
+            "iteration_5_loss": 0.00012989338407978947,
+            "iteration_5_mse_loss": 3.796548473263478e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.4444892406463623,
+            "random_seed": 1704354857.6666665
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272030431184471,
+            "iteration_1_test_mse_loss": 0.1846522200911139,
+            "iteration_2_test_loss": 0.0001318744811660074,
+            "iteration_2_test_mse_loss": 4.1579214671026545e-09,
+            "iteration_3_test_loss": 0.00013187567843248792,
+            "iteration_3_test_mse_loss": 4.15790729495248e-09,
+            "iteration_4_test_loss": 0.00013187627179270283,
+            "iteration_4_test_mse_loss": 4.157900332166489e-09,
+            "iteration_5_test_loss": 0.0001318765659564483,
+            "iteration_5_test_mse_loss": 4.157896889779374e-09,
+            "test_loss_after_training": 0.00013187656351806317,
+            "test_loss_after_training_mse": 4.157896773786941e-09
+        }
+    },
+    "experiment_3": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354858,
+                1704354859,
+                1704354859
+            ],
+            "iteration_1_loss": 1.0145910024689881,
+            "iteration_1_mse_loss": 0.1856399711585189,
+            "iteration_2_loss": 0.00012306875737885434,
+            "iteration_2_mse_loss": 3.5881874481884255e-09,
+            "iteration_3_loss": 0.00012306878179637533,
+            "iteration_3_mse_loss": 3.588187448177753e-09,
+            "iteration_4_loss": 0.00012306879390234666,
+            "iteration_4_mse_loss": 3.588187448175159e-09,
+            "iteration_5_loss": 0.00012306879990497924,
+            "iteration_5_mse_loss": 3.5881874481746165e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.4876666863759358,
+            "random_seed": 1704354858.666667
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272032958683626,
+            "iteration_1_test_mse_loss": 0.18465230458881365,
+            "iteration_2_test_loss": 0.00012406487157414853,
+            "iteration_2_test_mse_loss": 3.905415003357481e-09,
+            "iteration_3_test_loss": 0.00012406489742122914,
+            "iteration_3_test_mse_loss": 3.905414745117871e-09,
+            "iteration_4_test_loss": 0.00012406491024792793,
+            "iteration_4_test_mse_loss": 3.905414617010091e-09,
+            "iteration_5_test_loss": 0.00012406491661014576,
+            "iteration_5_test_mse_loss": 3.905414553457614e-09,
+            "test_loss_after_training": 0.00012406491680272235,
+            "test_loss_after_training_mse": 3.905414553053132e-09
+        }
+    },
+    "experiment_4": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354860,
+                1704354860,
+                1704354861
+            ],
+            "iteration_1_loss": 1.014591003374279,
+            "iteration_1_mse_loss": 0.1856399711588287,
+            "iteration_2_loss": 0.00012301436684734526,
+            "iteration_2_mse_loss": 3.587061694450064e-09,
+            "iteration_3_loss": 0.0001230143572295276,
+            "iteration_3_mse_loss": 3.5870616944477114e-09,
+            "iteration_4_loss": 0.00012301435246399285,
+            "iteration_4_mse_loss": 3.587061694450642e-09,
+            "iteration_5_loss": 0.00012301435009865258,
+            "iteration_5_mse_loss": 3.587061694449039e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.44128974278767896,
+            "random_seed": 1704354860.3333333
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272033243077736,
+            "iteration_1_test_mse_loss": 0.1846522895707299,
+            "iteration_2_test_loss": 0.00012400001052661856,
+            "iteration_2_test_mse_loss": 3.903364163866515e-09,
+            "iteration_3_test_loss": 0.00012400000030959906,
+            "iteration_3_test_mse_loss": 3.903364264633247e-09,
+            "iteration_4_test_loss": 0.0001239999952481753,
+            "iteration_4_test_mse_loss": 3.9033643146415615e-09,
+            "iteration_5_test_loss": 0.0001239999927357387,
+            "iteration_5_test_mse_loss": 3.903364339386222e-09,
+            "test_loss_after_training": 0.00012399999294011434,
+            "test_loss_after_training_mse": 3.903364339357679e-09
+        }
+    },
+    "experiment_5": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354861,
+                1704354862,
+                1704354862
+            ],
+            "iteration_1_loss": 1.014607953951731,
+            "iteration_1_mse_loss": 0.18564101670397956,
+            "iteration_2_loss": 0.007011886606254535,
+            "iteration_2_mse_loss": 8.15408176121354e-06,
+            "iteration_3_loss": 0.007011873801765569,
+            "iteration_3_mse_loss": 8.154043258953127e-06,
+            "iteration_4_loss": 0.007011874073723581,
+            "iteration_4_mse_loss": 8.154041242246333e-06,
+            "iteration_5_loss": 0.007011874273074812,
+            "iteration_5_mse_loss": 8.154041117074403e-06,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.3721431891123454,
+            "random_seed": 1704354861.666667
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271976300896903,
+            "iteration_1_test_mse_loss": 0.18464389813401155,
+            "iteration_2_test_loss": 0.007083666144183062,
+            "iteration_2_test_mse_loss": 8.147944340321545e-06,
+            "iteration_3_test_loss": 0.00708362008761825,
+            "iteration_3_test_mse_loss": 8.147895492639241e-06,
+            "iteration_4_test_loss": 0.007083617310286601,
+            "iteration_4_test_mse_loss": 8.14789113763845e-06,
+            "iteration_5_test_loss": 0.007083617092031964,
+            "iteration_5_test_mse_loss": 8.147890707132732e-06,
+            "test_loss_after_training": 0.007083617081990798,
+            "test_loss_after_training_mse": 8.147890861949475e-06
+        }
+    },
+    "experiment_6": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354862,
+                1704354863,
+                1704354863
+            ],
+            "iteration_1_loss": 1.0145926992010694,
+            "iteration_1_mse_loss": 0.1856400715263427,
+            "iteration_2_loss": 0.0028861448877169306,
+            "iteration_2_mse_loss": 1.3965797272503789e-06,
+            "iteration_3_loss": 0.002886145788948169,
+            "iteration_3_mse_loss": 1.3965782117923137e-06,
+            "iteration_4_loss": 0.0028861466524798757,
+            "iteration_4_mse_loss": 1.3965781099568336e-06,
+            "iteration_5_loss": 0.0028861470817288784,
+            "iteration_5_mse_loss": 1.3965781001715818e-06,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.3662904103597005,
+            "random_seed": 1704354862.6666665
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271828430866194,
+            "iteration_1_test_mse_loss": 0.18464324762707873,
+            "iteration_2_test_loss": 0.0030055712391545185,
+            "iteration_2_test_mse_loss": 1.5292985084491684e-06,
+            "iteration_3_test_loss": 0.003005589556385177,
+            "iteration_3_test_mse_loss": 1.529285761330807e-06,
+            "iteration_4_test_loss": 0.00300559158524807,
+            "iteration_4_test_mse_loss": 1.5292819632505776e-06,
+            "iteration_5_test_loss": 0.003005591725029077,
+            "iteration_5_test_mse_loss": 1.52928095028163e-06,
+            "test_loss_after_training": 0.003005591483236792,
+            "test_loss_after_training_mse": 1.5292806614074704e-06
+        }
+    },
+    "experiment_7": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354864,
+                1704354864,
+                1704354864
+            ],
+            "iteration_1_loss": 1.0145862656737317,
+            "iteration_1_mse_loss": 0.18563781566112209,
+            "iteration_2_loss": 0.004916402960665551,
+            "iteration_2_mse_loss": 4.255149731591582e-06,
+            "iteration_3_loss": 0.004916398157054834,
+            "iteration_3_mse_loss": 4.255137562504181e-06,
+            "iteration_4_loss": 0.004916398436915144,
+            "iteration_4_mse_loss": 4.255137074241522e-06,
+            "iteration_5_loss": 0.004916398544178926,
+            "iteration_5_mse_loss": 4.255137049397292e-06,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.372103214263916,
+            "random_seed": 1704354864.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272115728080784,
+            "iteration_1_test_mse_loss": 0.18465116542350915,
+            "iteration_2_test_loss": 0.004928149917019747,
+            "iteration_2_test_mse_loss": 4.2630360223783655e-06,
+            "iteration_3_test_loss": 0.0049280545337176945,
+            "iteration_3_test_mse_loss": 4.262884534335564e-06,
+            "iteration_4_test_loss": 0.004928040184181422,
+            "iteration_4_test_mse_loss": 4.262862418358537e-06,
+            "iteration_5_test_loss": 0.004928037639102061,
+            "iteration_5_test_mse_loss": 4.262858623987716e-06,
+            "test_loss_after_training": 0.004928037099923695,
+            "test_loss_after_training_mse": 4.262857888729724e-06
+        }
+    },
+    "experiment_8": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 256,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354865,
+                1704354865,
+                1704354866
+            ],
+            "iteration_1_loss": 1.014593422278798,
+            "iteration_1_mse_loss": 0.18563999701923561,
+            "iteration_2_loss": 0.0032130497141129636,
+            "iteration_2_mse_loss": 1.7082939720911862e-06,
+            "iteration_3_loss": 0.003213049440569148,
+            "iteration_3_mse_loss": 1.7082926580056883e-06,
+            "iteration_4_loss": 0.0032130498420509792,
+            "iteration_4_mse_loss": 1.708292574546926e-06,
+            "iteration_5_loss": 0.0032130500863243256,
+            "iteration_5_mse_loss": 1.708292566126905e-06,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.4176166852315267,
+            "random_seed": 1704354865.3333335
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271842558525888,
+            "iteration_1_test_mse_loss": 0.18464277499323115,
+            "iteration_2_test_loss": 0.003266220627381717,
+            "iteration_2_test_mse_loss": 1.747146504764484e-06,
+            "iteration_3_test_loss": 0.00326622154999273,
+            "iteration_3_test_mse_loss": 1.7471492063048736e-06,
+            "iteration_4_test_loss": 0.0032662220529014203,
+            "iteration_4_test_mse_loss": 1.747148452401903e-06,
+            "iteration_5_test_loss": 0.003266222134203388,
+            "iteration_5_test_mse_loss": 1.7471480574385963e-06,
+            "test_loss_after_training": 0.003266222045874668,
+            "test_loss_after_training_mse": 1.7471479552012294e-06
+        }
+    },
+    "experiment_9": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354866,
+                1704354867,
+                1704354868
+            ],
+            "iteration_1_loss": 1.0145916620134718,
+            "iteration_1_mse_loss": 0.18564000575196296,
+            "iteration_2_loss": 0.0009427559606017986,
+            "iteration_2_mse_loss": 1.9446831548950282e-07,
+            "iteration_3_loss": 0.0009427621585145795,
+            "iteration_3_mse_loss": 1.9446816057310224e-07,
+            "iteration_4_loss": 0.0009427653093470026,
+            "iteration_4_mse_loss": 1.9446813941123777e-07,
+            "iteration_5_loss": 0.0009427668403423357,
+            "iteration_5_mse_loss": 1.9446813554048376e-07,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.952442248662313,
+            "random_seed": 1704354867.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271908861055608,
+            "iteration_1_test_mse_loss": 0.18464730081529526,
+            "iteration_2_test_loss": 0.0009991375216638686,
+            "iteration_2_test_mse_loss": 2.2733223335980023e-07,
+            "iteration_3_test_loss": 0.0009991398349210787,
+            "iteration_3_test_mse_loss": 2.2732783434261838e-07,
+            "iteration_4_test_loss": 0.0009991417441729113,
+            "iteration_4_test_mse_loss": 2.2732684086513384e-07,
+            "iteration_5_test_loss": 0.0009991427836168285,
+            "iteration_5_test_mse_loss": 2.273265454227354e-07,
+            "test_loss_after_training": 0.000999142696631055,
+            "test_loss_after_training_mse": 2.2732649813686884e-07
+        }
+    },
+    "experiment_10": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354869,
+                1704354870,
+                1704354871
+            ],
+            "iteration_1_loss": 1.0145909939388587,
+            "iteration_1_mse_loss": 0.1856399711207061,
+            "iteration_2_loss": 0.000125572874982931,
+            "iteration_2_mse_loss": 3.6619377212452456e-09,
+            "iteration_3_loss": 0.00012557364914435911,
+            "iteration_3_mse_loss": 3.6619377064700835e-09,
+            "iteration_4_loss": 0.00012557403294841365,
+            "iteration_4_mse_loss": 3.6619377028838643e-09,
+            "iteration_5_loss": 0.0001255742232077255,
+            "iteration_5_mse_loss": 3.6619377020081736e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.9846085707346599,
+            "random_seed": 1704354870.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272031937018757,
+            "iteration_1_test_mse_loss": 0.1846521727716895,
+            "iteration_2_test_loss": 0.00012714856196585284,
+            "iteration_2_test_mse_loss": 4.055768657239991e-09,
+            "iteration_3_test_loss": 0.00012714938635952314,
+            "iteration_3_test_mse_loss": 4.055760822179064e-09,
+            "iteration_4_test_loss": 0.00012714979475124708,
+            "iteration_4_test_mse_loss": 4.055756855216733e-09,
+            "iteration_5_test_loss": 0.0001271499970880266,
+            "iteration_5_test_mse_loss": 4.055754852621978e-09,
+            "test_loss_after_training": 0.000127149997220922,
+            "test_loss_after_training_mse": 4.055754963700668e-09
+        }
+    },
+    "experiment_11": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354872,
+                1704354873,
+                1704354873
+            ],
+            "iteration_1_loss": 1.01459100289519,
+            "iteration_1_mse_loss": 0.18563997115870254,
+            "iteration_2_loss": 0.00012301928979342817,
+            "iteration_2_mse_loss": 3.5870885821061935e-09,
+            "iteration_3_loss": 0.00012301928835669628,
+            "iteration_3_mse_loss": 3.587088582106154e-09,
+            "iteration_4_loss": 0.00012301928764625874,
+            "iteration_4_mse_loss": 3.587088582106153e-09,
+            "iteration_5_loss": 0.00012301928729388368,
+            "iteration_5_mse_loss": 3.587088582106126e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.8239394028981526,
+            "random_seed": 1704354872.6666665
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272033332592125,
+            "iteration_1_test_mse_loss": 0.18465229499019717,
+            "iteration_2_test_loss": 0.00012400680077879523,
+            "iteration_2_test_mse_loss": 3.903585593657475e-09,
+            "iteration_3_test_loss": 0.0001240067992461356,
+            "iteration_3_test_mse_loss": 3.903585608845417e-09,
+            "iteration_4_test_loss": 0.00012400679848962023,
+            "iteration_4_test_mse_loss": 3.903585616364446e-09,
+            "iteration_5_test_loss": 0.0001240067981146332,
+            "iteration_5_test_mse_loss": 3.903585620096364e-09,
+            "test_loss_after_training": 0.00012400679831882464,
+            "test_loss_after_training_mse": 3.9035856201155345e-09
+        }
+    },
+    "experiment_12": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354874,
+                1704354875,
+                1704354876
+            ],
+            "iteration_1_loss": 1.0145910031640024,
+            "iteration_1_mse_loss": 0.18563997115874584,
+            "iteration_2_loss": 0.00012300593137725134,
+            "iteration_2_mse_loss": 3.586836894355204e-09,
+            "iteration_3_loss": 0.0001230059248058073,
+            "iteration_3_mse_loss": 3.5868368943549368e-09,
+            "iteration_4_loss": 0.00012300592154858856,
+            "iteration_4_mse_loss": 3.586836894354898e-09,
+            "iteration_5_loss": 0.00012300591993291406,
+            "iteration_5_mse_loss": 3.5868368943543784e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.8772669633229573,
+            "random_seed": 1704354875.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272033312945579,
+            "iteration_1_test_mse_loss": 0.18465229166603478,
+            "iteration_2_test_loss": 0.00012399222575177872,
+            "iteration_2_test_mse_loss": 3.9030941179876956e-09,
+            "iteration_3_test_loss": 0.0001239922187726526,
+            "iteration_3_test_mse_loss": 3.9030941867948975e-09,
+            "iteration_4_test_loss": 0.00012399221531460492,
+            "iteration_4_test_mse_loss": 3.903094221011813e-09,
+            "iteration_5_test_loss": 0.00012399221359760227,
+            "iteration_5_test_mse_loss": 3.903094237877959e-09,
+            "test_loss_after_training": 0.00012399221380180088,
+            "test_loss_after_training_mse": 3.903094237860138e-09
+        }
+    },
+    "experiment_13": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354877,
+                1704354878,
+                1704354878
+            ],
+            "iteration_1_loss": 1.0145990137853136,
+            "iteration_1_mse_loss": 0.18564037288887308,
+            "iteration_2_loss": 0.0054847024428137815,
+            "iteration_2_mse_loss": 5.123650280496739e-06,
+            "iteration_3_loss": 0.00548468854417395,
+            "iteration_3_mse_loss": 5.123626833454229e-06,
+            "iteration_4_loss": 0.00548468753082808,
+            "iteration_4_mse_loss": 5.123625037045909e-06,
+            "iteration_5_loss": 0.005484687468401736,
+            "iteration_5_mse_loss": 5.123624880814427e-06,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.7579233646392822,
+            "random_seed": 1704354877.6666665
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271957562431837,
+            "iteration_1_test_mse_loss": 0.18464483044765295,
+            "iteration_2_test_loss": 0.005582742146570145,
+            "iteration_2_test_mse_loss": 5.237357802577936e-06,
+            "iteration_3_test_loss": 0.005582666192053507,
+            "iteration_3_test_mse_loss": 5.237219664975931e-06,
+            "iteration_4_test_loss": 0.005582648848826628,
+            "iteration_4_test_mse_loss": 5.237186482069064e-06,
+            "iteration_5_test_loss": 0.005582644199719818,
+            "iteration_5_test_mse_loss": 5.2371782375113734e-06,
+            "test_loss_after_training": 0.005582642308168323,
+            "test_loss_after_training_mse": 5.237175315790718e-06
+        }
+    },
+    "experiment_14": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354879,
+                1704354880,
+                1704354881
+            ],
+            "iteration_1_loss": 1.014591418931052,
+            "iteration_1_mse_loss": 0.1856399748519514,
+            "iteration_2_loss": 0.0011322288563150233,
+            "iteration_2_mse_loss": 2.1570951395493695e-07,
+            "iteration_3_loss": 0.0011322288147564842,
+            "iteration_3_mse_loss": 2.157094806019495e-07,
+            "iteration_4_loss": 0.0011322288443317708,
+            "iteration_4_mse_loss": 2.1570947820243167e-07,
+            "iteration_5_loss": 0.001132228860571308,
+            "iteration_5_mse_loss": 2.1570947799117773e-07,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.8315732479095459,
+            "random_seed": 1704354880.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272082568681153,
+            "iteration_1_test_mse_loss": 0.18465497043088816,
+            "iteration_2_test_loss": 0.0011961198481562061,
+            "iteration_2_test_mse_loss": 2.490199427111136e-07,
+            "iteration_3_test_loss": 0.0011961185325764406,
+            "iteration_3_test_mse_loss": 2.4902011021894697e-07,
+            "iteration_4_test_loss": 0.0011961179267378234,
+            "iteration_4_test_mse_loss": 2.490199912200659e-07,
+            "iteration_5_test_loss": 0.0011961177682848012,
+            "iteration_5_test_mse_loss": 2.490199564453703e-07,
+            "test_loss_after_training": 0.0011961177157253542,
+            "test_loss_after_training_mse": 2.4901995146194945e-07
+        }
+    },
+    "experiment_15": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354882,
+                1704354882,
+                1704354883
+            ],
+            "iteration_1_loss": 1.014591047505271,
+            "iteration_1_mse_loss": 0.1856399739796274,
+            "iteration_2_loss": 0.0010184574633149556,
+            "iteration_2_mse_loss": 1.6923418533221763e-07,
+            "iteration_3_loss": 0.001018457649929683,
+            "iteration_3_mse_loss": 1.6923416506458294e-07,
+            "iteration_4_loss": 0.0010184577703552264,
+            "iteration_4_mse_loss": 1.692341635224291e-07,
+            "iteration_5_loss": 0.0010184578327507188,
+            "iteration_5_mse_loss": 1.6923416337044001e-07,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.7509556611378987,
+            "random_seed": 1704354882.3333335
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271987831334035,
+            "iteration_1_test_mse_loss": 0.18465420970791774,
+            "iteration_2_test_loss": 0.0010802998543690766,
+            "iteration_2_test_mse_loss": 2.051332361087455e-07,
+            "iteration_3_test_loss": 0.0010803008691721886,
+            "iteration_3_test_mse_loss": 2.0513514639042471e-07,
+            "iteration_4_test_loss": 0.0010803012395590283,
+            "iteration_4_test_mse_loss": 2.0513552850633443e-07,
+            "iteration_5_test_loss": 0.0010803013764023408,
+            "iteration_5_test_mse_loss": 2.0513561647926662e-07,
+            "test_loss_after_training": 0.0010803014195456572,
+            "test_loss_after_training_mse": 2.05135652614218e-07
+        }
+    },
+    "experiment_16": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 512,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354884,
+                1704354885,
+                1704354886
+            ],
+            "iteration_1_loss": 1.0145910293382634,
+            "iteration_1_mse_loss": 0.18563993784240987,
+            "iteration_2_loss": 0.0009118990791021689,
+            "iteration_2_mse_loss": 1.4951952907640639e-07,
+            "iteration_3_loss": 0.0009118995374823587,
+            "iteration_3_mse_loss": 1.495195106107085e-07,
+            "iteration_4_loss": 0.000911899777711525,
+            "iteration_4_mse_loss": 1.4951950916109563e-07,
+            "iteration_5_loss": 0.0009118998947729292,
+            "iteration_5_mse_loss": 1.495195090114629e-07,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 0.7680290540059407,
+            "random_seed": 1704354885.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271945540615426,
+            "iteration_1_test_mse_loss": 0.18464730037025132,
+            "iteration_2_test_loss": 0.0009913374500958136,
+            "iteration_2_test_mse_loss": 1.8222163848662227e-07,
+            "iteration_3_test_loss": 0.0009913370444286777,
+            "iteration_3_test_mse_loss": 1.8222046776608005e-07,
+            "iteration_4_test_loss": 0.000991337065232751,
+            "iteration_4_test_mse_loss": 1.8222023836416494e-07,
+            "iteration_5_test_loss": 0.0009913371048177611,
+            "iteration_5_test_mse_loss": 1.8222018198524675e-07,
+            "test_loss_after_training": 0.0009913370909235574,
+            "test_loss_after_training_mse": 1.822201714397698e-07
+        }
+    },
+    "experiment_17": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354886,
+                1704354889,
+                1704354891
+            ],
+            "iteration_1_loss": 1.014590566384099,
+            "iteration_1_mse_loss": 0.18563996203966646,
+            "iteration_2_loss": 0.0006700824046916564,
+            "iteration_2_mse_loss": 9.031903223767116e-08,
+            "iteration_3_loss": 0.0006700854368641097,
+            "iteration_3_mse_loss": 9.03189771436009e-08,
+            "iteration_4_loss": 0.00067008702501667,
+            "iteration_4_mse_loss": 9.031896727060711e-08,
+            "iteration_5_loss": 0.0006700878401140134,
+            "iteration_5_mse_loss": 9.031896517467947e-08,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 2.6021119753519693,
+            "random_seed": 1704354888.6666667
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.027192403180908,
+            "iteration_1_test_mse_loss": 0.1846459694473089,
+            "iteration_2_test_loss": 0.0007179965721904368,
+            "iteration_2_test_mse_loss": 1.0604402255695666e-07,
+            "iteration_3_test_loss": 0.0007180021548622439,
+            "iteration_3_test_mse_loss": 1.0604484274536664e-07,
+            "iteration_4_test_loss": 0.0007180044257562497,
+            "iteration_4_test_mse_loss": 1.0604502807226868e-07,
+            "iteration_5_test_loss": 0.000718005422532802,
+            "iteration_5_test_mse_loss": 1.0604505218656369e-07,
+            "test_loss_after_training": 0.0007180055155735589,
+            "test_loss_after_training_mse": 1.0604512369288099e-07
+        }
+    },
+    "experiment_18": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354894,
+                1704354897,
+                1704354899
+            ],
+            "iteration_1_loss": 1.0145909996644327,
+            "iteration_1_mse_loss": 0.18563997113617223,
+            "iteration_2_loss": 0.00012445084307717813,
+            "iteration_2_mse_loss": 3.6236779302341427e-09,
+            "iteration_3_loss": 0.00012445123714327448,
+            "iteration_3_mse_loss": 3.6236779265152388e-09,
+            "iteration_4_loss": 0.00012445143236424535,
+            "iteration_4_mse_loss": 3.623677925607974e-09,
+            "iteration_5_loss": 0.00012445152910082685,
+            "iteration_5_mse_loss": 3.6236779253859437e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 2.499686082204183,
+            "random_seed": 1704354896.6666665
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272033455899958,
+            "iteration_1_test_mse_loss": 0.18465217388969488,
+            "iteration_2_test_loss": 0.00012572483717287165,
+            "iteration_2_test_mse_loss": 3.989792109340678e-09,
+            "iteration_3_test_loss": 0.00012572525208942286,
+            "iteration_3_test_mse_loss": 3.989788011666315e-09,
+            "iteration_4_test_loss": 0.0001257254580934034,
+            "iteration_4_test_mse_loss": 3.989785969293472e-09,
+            "iteration_5_test_loss": 0.00012572556031123643,
+            "iteration_5_test_mse_loss": 3.989784950770976e-09,
+            "test_loss_after_training": 0.0001257255601929673,
+            "test_loss_after_training_mse": 3.989784979550684e-09
+        }
+    },
+    "experiment_19": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354902,
+                1704354904,
+                1704354907
+            ],
+            "iteration_1_loss": 1.0145910029651937,
+            "iteration_1_mse_loss": 0.18563997115870612,
+            "iteration_2_loss": 0.00012300581038162151,
+            "iteration_2_mse_loss": 3.5868159886854094e-09,
+            "iteration_3_loss": 0.00012300580580093222,
+            "iteration_3_mse_loss": 3.586815988685032e-09,
+            "iteration_4_loss": 0.00012300580353102016,
+            "iteration_4_mse_loss": 3.586815988684928e-09,
+            "iteration_5_loss": 0.00012300580240543334,
+            "iteration_5_mse_loss": 3.5868159886849288e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 2.4940364360809326,
+            "random_seed": 1704354904.3333335
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272033299928949,
+            "iteration_1_test_mse_loss": 0.1846522904458278,
+            "iteration_2_test_loss": 0.00012399255156808256,
+            "iteration_2_test_mse_loss": 3.903132967112582e-09,
+            "iteration_3_test_loss": 0.00012399254669992826,
+            "iteration_3_test_mse_loss": 3.9031330151293035e-09,
+            "iteration_4_test_loss": 0.00012399254428822952,
+            "iteration_4_test_mse_loss": 3.90313303894555e-09,
+            "iteration_5_test_loss": 0.00012399254309237932,
+            "iteration_5_test_mse_loss": 3.903133050755318e-09,
+            "test_loss_after_training": 0.00012399254329665434,
+            "test_loss_after_training_mse": 3.90313305075304e-09
+        }
+    },
+    "experiment_20": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354909,
+                1704354912,
+                1704354914
+            ],
+            "iteration_1_loss": 1.014591003155472,
+            "iteration_1_mse_loss": 0.18563997115868044,
+            "iteration_2_loss": 0.00012299842677135787,
+            "iteration_2_mse_loss": 3.586688090208238e-09,
+            "iteration_3_loss": 0.00012299842197327422,
+            "iteration_3_mse_loss": 3.586688090207807e-09,
+            "iteration_4_loss": 0.00012299841959724603,
+            "iteration_4_mse_loss": 3.5866880902078268e-09,
+            "iteration_5_loss": 0.0001229984184178938,
+            "iteration_5_mse_loss": 3.586688090207367e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 2.5090178648630777,
+            "random_seed": 1704354911.6666665
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.027203328438643,
+            "iteration_1_test_mse_loss": 0.1846522901726721,
+            "iteration_2_test_loss": 0.0001239858649651706,
+            "iteration_2_test_mse_loss": 3.902929303380851e-09,
+            "iteration_3_test_loss": 0.00012398585987133046,
+            "iteration_3_test_mse_loss": 3.9029293536163295e-09,
+            "iteration_4_test_loss": 0.00012398585734935637,
+            "iteration_4_test_mse_loss": 3.902929378535826e-09,
+            "iteration_5_test_loss": 0.00012398585609711067,
+            "iteration_5_test_mse_loss": 3.902929390937022e-09,
+            "test_loss_after_training": 0.00012398585630144312,
+            "test_loss_after_training_mse": 3.902929390936803e-09
+        }
+    },
+    "experiment_21": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354917,
+                1704354919,
+                1704354921
+            ],
+            "iteration_1_loss": 1.0145948823847881,
+            "iteration_1_mse_loss": 0.18564000978350248,
+            "iteration_2_loss": 0.0037908097053332996,
+            "iteration_2_mse_loss": 2.4189696938034143e-06,
+            "iteration_3_loss": 0.0037908074964515845,
+            "iteration_3_mse_loss": 2.418966770984324e-06,
+            "iteration_4_loss": 0.0037908074426257835,
+            "iteration_4_mse_loss": 2.4189665873052657e-06,
+            "iteration_5_loss": 0.0037908074735399245,
+            "iteration_5_mse_loss": 2.4189665735471966e-06,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 2.3479014237721763,
+            "random_seed": 1704354919.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271796216271534,
+            "iteration_1_test_mse_loss": 0.18464492779113953,
+            "iteration_2_test_loss": 0.003837790359331853,
+            "iteration_2_test_mse_loss": 2.4151695393174615e-06,
+            "iteration_3_test_loss": 0.00383779016412078,
+            "iteration_3_test_mse_loss": 2.415168372192236e-06,
+            "iteration_4_test_loss": 0.0038377904558237787,
+            "iteration_4_test_mse_loss": 2.4151684103311786e-06,
+            "iteration_5_test_loss": 0.00383779050834533,
+            "iteration_5_test_mse_loss": 2.4151684193976524e-06,
+            "test_loss_after_training": 0.0038377905090177097,
+            "test_loss_after_training_mse": 2.4151684423439113e-06
+        }
+    },
+    "experiment_22": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354924,
+                1704354926,
+                1704354929
+            ],
+            "iteration_1_loss": 1.0145910798428295,
+            "iteration_1_mse_loss": 0.18563997877817018,
+            "iteration_2_loss": 0.0004555256955384309,
+            "iteration_2_mse_loss": 3.7984157429913185e-08,
+            "iteration_3_loss": 0.00045552587523898765,
+            "iteration_3_mse_loss": 3.7984156054395504e-08,
+            "iteration_4_loss": 0.0004555259654102832,
+            "iteration_4_mse_loss": 3.798415594911331e-08,
+            "iteration_5_loss": 0.0004555260095855172,
+            "iteration_5_mse_loss": 3.7984155939598194e-08,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 2.423548380533854,
+            "random_seed": 1704354926.333333
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271942962740073,
+            "iteration_1_test_mse_loss": 0.18464781633297217,
+            "iteration_2_test_loss": 0.0005811275256818475,
+            "iteration_2_test_mse_loss": 7.198042577396544e-08,
+            "iteration_3_test_loss": 0.0005811274842272415,
+            "iteration_3_test_mse_loss": 7.19801616306571e-08,
+            "iteration_4_test_loss": 0.0005811274273428851,
+            "iteration_4_test_mse_loss": 7.198006457255168e-08,
+            "iteration_5_test_loss": 0.0005811274148407871,
+            "iteration_5_test_mse_loss": 7.198003394008214e-08,
+            "test_loss_after_training": 0.0005811273938071376,
+            "test_loss_after_training_mse": 7.198002176391105e-08
+        }
+    },
+    "experiment_23": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354931,
+                1704354934,
+                1704354936
+            ],
+            "iteration_1_loss": 1.014591018302686,
+            "iteration_1_mse_loss": 0.1856399717500866,
+            "iteration_2_loss": 0.0003614443641445596,
+            "iteration_2_mse_loss": 2.3051173900476317e-08,
+            "iteration_3_loss": 0.00036144450001142825,
+            "iteration_3_mse_loss": 2.305117361787245e-08,
+            "iteration_4_loss": 0.0003614445675415693,
+            "iteration_4_mse_loss": 2.305117359738554e-08,
+            "iteration_5_loss": 0.00036144460079536267,
+            "iteration_5_mse_loss": 2.3051173595605082e-08,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 2.5068549315134687,
+            "random_seed": 1704354933.6666667
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271953598725316,
+            "iteration_1_test_mse_loss": 0.18464735849099706,
+            "iteration_2_test_loss": 0.0004899562854481243,
+            "iteration_2_test_mse_loss": 9.740872702611511e-08,
+            "iteration_3_test_loss": 0.0004899561071592323,
+            "iteration_3_test_mse_loss": 9.740846981737029e-08,
+            "iteration_4_test_loss": 0.00048995608733093,
+            "iteration_4_test_mse_loss": 9.74084310346877e-08,
+            "iteration_5_test_loss": 0.0004899560907778307,
+            "iteration_5_test_mse_loss": 9.740842221330005e-08,
+            "test_loss_after_training": 0.000489956082348537,
+            "test_loss_after_training_mse": 9.740841984614517e-08
+        }
+    },
+    "experiment_24": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 1024,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354939,
+                1704354941,
+                1704354943
+            ],
+            "iteration_1_loss": 1.0145910298799832,
+            "iteration_1_mse_loss": 0.18563997231620677,
+            "iteration_2_loss": 0.00037135487079239344,
+            "iteration_2_mse_loss": 2.3940455514944003e-08,
+            "iteration_3_loss": 0.00037135508264689337,
+            "iteration_3_mse_loss": 2.3940455098875675e-08,
+            "iteration_4_loss": 0.0003713551902887031,
+            "iteration_4_mse_loss": 2.3940455066380107e-08,
+            "iteration_5_loss": 0.00037135524380724503,
+            "iteration_5_mse_loss": 2.3940455062975802e-08,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 2.3692120711008706,
+            "random_seed": 1704354941.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271921413545386,
+            "iteration_1_test_mse_loss": 0.1846455028930866,
+            "iteration_2_test_loss": 0.0005145775806521569,
+            "iteration_2_test_mse_loss": 5.264168643291222e-07,
+            "iteration_3_test_loss": 0.0005145779536667648,
+            "iteration_3_test_mse_loss": 5.264176246783048e-07,
+            "iteration_4_test_loss": 0.0005145781081170443,
+            "iteration_4_test_mse_loss": 5.264177387685804e-07,
+            "iteration_5_test_loss": 0.0005145781699390016,
+            "iteration_5_test_mse_loss": 5.264177644008353e-07,
+            "test_loss_after_training": 0.0005145781784505274,
+            "test_loss_after_training_mse": 5.264177762169929e-07
+        }
+    },
+    "experiment_25": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354946,
+                1704354952,
+                1704354957
+            ],
+            "iteration_1_loss": 1.0145909136049758,
+            "iteration_1_mse_loss": 0.1856399390784193,
+            "iteration_2_loss": 0.0005472848240402701,
+            "iteration_2_mse_loss": 6.416661519223132e-08,
+            "iteration_3_loss": 0.0005472887797501525,
+            "iteration_3_mse_loss": 6.416660340073954e-08,
+            "iteration_4_loss": 0.0005472907143375513,
+            "iteration_4_mse_loss": 6.416660166910292e-08,
+            "iteration_5_loss": 0.0005472916672203081,
+            "iteration_5_mse_loss": 6.41666013360852e-08,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 5.499186197916666,
+            "random_seed": 1704354951.6666667
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272068672114976,
+            "iteration_1_test_mse_loss": 0.1846495484724037,
+            "iteration_2_test_loss": 0.0005905719497463953,
+            "iteration_2_test_mse_loss": 8.200235771186599e-08,
+            "iteration_3_test_loss": 0.0005905756619175588,
+            "iteration_3_test_mse_loss": 8.200162348997291e-08,
+            "iteration_4_test_loss": 0.0005905774483215392,
+            "iteration_4_test_mse_loss": 8.200140616480439e-08,
+            "iteration_5_test_loss": 0.0005905783659087594,
+            "iteration_5_test_mse_loss": 8.200133741442246e-08,
+            "test_loss_after_training": 0.000590578381463389,
+            "test_loss_after_training_mse": 8.200133098119555e-08
+        }
+    },
+    "experiment_26": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354962,
+                1704354968,
+                1704354973
+            ],
+            "iteration_1_loss": 1.014591002473817,
+            "iteration_1_mse_loss": 0.18563997114296432,
+            "iteration_2_loss": 0.00012386882745009,
+            "iteration_2_mse_loss": 3.6097264728491383e-09,
+            "iteration_3_loss": 0.00012386901470354473,
+            "iteration_3_mse_loss": 3.6097264718405905e-09,
+            "iteration_4_loss": 0.00012386910741264895,
+            "iteration_4_mse_loss": 3.6097264715955668e-09,
+            "iteration_5_loss": 0.000123869153335882,
+            "iteration_5_mse_loss": 3.60972647153573e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 5.193311055501302,
+            "random_seed": 1704354967.6666665
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272032587756343,
+            "iteration_1_test_mse_loss": 0.18465226060334003,
+            "iteration_2_test_loss": 0.00012542388105932442,
+            "iteration_2_test_mse_loss": 3.9803797887219625e-09,
+            "iteration_3_test_loss": 0.0001254240772347214,
+            "iteration_3_test_mse_loss": 3.980377856351635e-09,
+            "iteration_4_test_loss": 0.00012542417453829968,
+            "iteration_4_test_mse_loss": 3.980376892000856e-09,
+            "iteration_5_test_loss": 0.00012542422279395398,
+            "iteration_5_test_mse_loss": 3.9803764107898655e-09,
+            "test_loss_after_training": 0.00012542422283584763,
+            "test_loss_after_training_mse": 3.980376425730926e-09
+        }
+    },
+    "experiment_27": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354978,
+                1704354983,
+                1704354988
+            ],
+            "iteration_1_loss": 1.0145910030966414,
+            "iteration_1_mse_loss": 0.18563997115864733,
+            "iteration_2_loss": 0.00012299476393330607,
+            "iteration_2_mse_loss": 3.5866560342878346e-09,
+            "iteration_3_loss": 0.000122994759300912,
+            "iteration_3_mse_loss": 3.586656034287444e-09,
+            "iteration_4_loss": 0.00012299475700506678,
+            "iteration_4_mse_loss": 3.5866560342873416e-09,
+            "iteration_5_loss": 0.00012299475586669776,
+            "iteration_5_mse_loss": 3.5866560342873028e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 5.318461338678996,
+            "random_seed": 1704354983.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272033290828035,
+            "iteration_1_test_mse_loss": 0.1846522896564243,
+            "iteration_2_test_loss": 0.00012398393401684074,
+            "iteration_2_test_mse_loss": 3.90295845344592e-09,
+            "iteration_3_test_loss": 0.0001239839290995902,
+            "iteration_3_test_mse_loss": 3.902958501911305e-09,
+            "iteration_4_test_loss": 0.00012398392666261205,
+            "iteration_4_test_mse_loss": 3.902958525945651e-09,
+            "iteration_5_test_loss": 0.00012398392545423618,
+            "iteration_5_test_mse_loss": 3.902958537860926e-09,
+            "test_loss_after_training": 0.00012398392565857348,
+            "test_loss_after_training_mse": 3.902958537847066e-09
+        }
+    },
+    "experiment_28": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "tanh",
+                "parameter_sampler": "tanh"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704354994,
+                1704354999,
+                1704355005
+            ],
+            "iteration_1_loss": 1.0145910031522622,
+            "iteration_1_mse_loss": 0.18563997115861777,
+            "iteration_2_loss": 0.00012299004971158716,
+            "iteration_2_mse_loss": 3.586556554198606e-09,
+            "iteration_3_loss": 0.00012299004598230825,
+            "iteration_3_mse_loss": 3.586556554198239e-09,
+            "iteration_4_loss": 0.0001229900441328385,
+            "iteration_4_mse_loss": 3.586556554198262e-09,
+            "iteration_5_loss": 0.00012299004321793077,
+            "iteration_5_mse_loss": 3.5865565541983323e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 5.18434222539266,
+            "random_seed": 1704354999.3333335
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.027203328578878,
+            "iteration_1_test_mse_loss": 0.18465229060697738,
+            "iteration_2_test_loss": 0.00012397918033337838,
+            "iteration_2_test_mse_loss": 3.902796700436458e-09,
+            "iteration_3_test_loss": 0.00012397917637773276,
+            "iteration_3_test_mse_loss": 3.9027967395320765e-09,
+            "iteration_4_test_loss": 0.00012397917441327083,
+            "iteration_4_test_mse_loss": 3.902796758841238e-09,
+            "iteration_5_test_loss": 0.0001239791734426626,
+            "iteration_5_test_mse_loss": 3.902796768429145e-09,
+            "test_loss_after_training": 0.00012397917364696204,
+            "test_loss_after_training_mse": 3.902796768432281e-09
+        }
+    },
+    "experiment_29": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 0.0001
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704355010,
+                1704355015,
+                1704355021
+            ],
+            "iteration_1_loss": 1.0145945743821765,
+            "iteration_1_mse_loss": 0.18564030854984426,
+            "iteration_2_loss": 0.0031066426156350193,
+            "iteration_2_mse_loss": 1.6654999015397164e-06,
+            "iteration_3_loss": 0.0031066402103944756,
+            "iteration_3_mse_loss": 1.6654974864754298e-06,
+            "iteration_4_loss": 0.0031066401778335755,
+            "iteration_4_mse_loss": 1.6654973521114739e-06,
+            "iteration_5_loss": 0.003106640226235544,
+            "iteration_5_mse_loss": 1.6654973428809048e-06,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 5.372071425120035,
+            "random_seed": 1704355015.3333335
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271876815845862,
+            "iteration_1_test_mse_loss": 0.18464612012545323,
+            "iteration_2_test_loss": 0.00315395974724431,
+            "iteration_2_test_mse_loss": 1.679178013844562e-06,
+            "iteration_3_test_loss": 0.003153934998460032,
+            "iteration_3_test_mse_loss": 1.6791521597066075e-06,
+            "iteration_4_test_loss": 0.0031539295098579967,
+            "iteration_4_test_mse_loss": 1.6791467680621531e-06,
+            "iteration_5_test_loss": 0.003153928153690978,
+            "iteration_5_test_mse_loss": 1.6791455913369968e-06,
+            "test_loss_after_training": 0.003153927651786356,
+            "test_loss_after_training_mse": 1.6791452686385672e-06
+        }
+    },
+    "experiment_30": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-06
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704355026,
+                1704355032,
+                1704355037
+            ],
+            "iteration_1_loss": 1.0145910106029523,
+            "iteration_1_mse_loss": 0.18563997133687393,
+            "iteration_2_loss": 0.00018645099729758767,
+            "iteration_2_mse_loss": 6.506149094908049e-09,
+            "iteration_3_loss": 0.00018645102448027438,
+            "iteration_3_mse_loss": 6.50614908913515e-09,
+            "iteration_4_loss": 0.00018645103796430717,
+            "iteration_4_mse_loss": 6.506149088807634e-09,
+            "iteration_5_loss": 0.00018645104464884267,
+            "iteration_5_mse_loss": 6.506149088781564e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 5.4469203154246015,
+            "random_seed": 1704355031.6666665
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272010529690636,
+            "iteration_1_test_mse_loss": 0.1846513005315949,
+            "iteration_2_test_loss": 0.000335327926503052,
+            "iteration_2_test_mse_loss": 2.356935573223339e-08,
+            "iteration_3_test_loss": 0.0003353278832315919,
+            "iteration_3_test_mse_loss": 2.356935560005499e-08,
+            "iteration_4_test_loss": 0.00033532787680614853,
+            "iteration_4_test_mse_loss": 2.3569354695379802e-08,
+            "iteration_5_test_loss": 0.0003353278763550844,
+            "iteration_5_test_mse_loss": 2.3569354151487096e-08,
+            "test_loss_after_training": 0.00033532787474622756,
+            "test_loss_after_training_mse": 2.3569353885501816e-08
+        }
+    },
+    "experiment_31": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-08
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704355042,
+                1704355047,
+                1704355052
+            ],
+            "iteration_1_loss": 1.014591007550219,
+            "iteration_1_mse_loss": 0.18563997171842495,
+            "iteration_2_loss": 0.00015346981683168835,
+            "iteration_2_mse_loss": 4.715828479976095e-09,
+            "iteration_3_loss": 0.00015346981949669134,
+            "iteration_3_mse_loss": 4.715828478116534e-09,
+            "iteration_4_loss": 0.00015346982083665704,
+            "iteration_4_mse_loss": 4.715828478027625e-09,
+            "iteration_5_loss": 0.00015346982150195795,
+            "iteration_5_mse_loss": 4.715828478022533e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 5.022941986719767,
+            "random_seed": 1704355047.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0271936328651992,
+            "iteration_1_test_mse_loss": 0.1846491295708079,
+            "iteration_2_test_loss": 0.00039277118889604175,
+            "iteration_2_test_mse_loss": 4.534801340174043e-08,
+            "iteration_3_test_loss": 0.0003927711958602181,
+            "iteration_3_test_mse_loss": 4.5348018462682155e-08,
+            "iteration_4_test_loss": 0.0003927711951800081,
+            "iteration_4_test_mse_loss": 4.5348017877496076e-08,
+            "iteration_5_test_loss": 0.0003927711956064085,
+            "iteration_5_test_mse_loss": 4.5348017734102464e-08,
+            "test_loss_after_training": 0.0003927711964926706,
+            "test_loss_after_training_mse": 4.5348017710615795e-08
+        }
+    },
+    "experiment_32": {
+        "n_modes": 8,
+        "branch_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "trunk_config": {
+            "dense_layer": {
+                "layer_width": 2048,
+                "activation": "relu",
+                "parameter_sampler": "relu"
+            },
+            "linear_layer": {
+                "regularization_scale": 1e-10
+            }
+        },
+        "training_info": {
+            "random_seeds": [
+                1704355057,
+                1704355062,
+                1704355067
+            ],
+            "iteration_1_loss": 1.014591006648431,
+            "iteration_1_mse_loss": 0.18563997164225873,
+            "iteration_2_loss": 0.00014749133680894703,
+            "iteration_2_mse_loss": 4.764331952663002e-09,
+            "iteration_3_loss": 0.00014749134117852302,
+            "iteration_3_mse_loss": 4.764331948602503e-09,
+            "iteration_4_loss": 0.00014749134337637305,
+            "iteration_4_mse_loss": 4.764331948360516e-09,
+            "iteration_5_loss": 0.00014749134446808326,
+            "iteration_5_mse_loss": 4.7643319483424215e-09,
+            "is_converged_values": [
+                true,
+                true,
+                true
+            ],
+            "iterations_to_convergence": 5.0,
+            "experiment_time": 5.057130575180054,
+            "random_seed": 1704355062.0
+        },
+        "test_info": {
+            "iteration_1_test_loss": 1.0272025811894945,
+            "iteration_1_test_mse_loss": 0.18465163574645369,
+            "iteration_2_test_loss": 0.00040314437346413855,
+            "iteration_2_test_mse_loss": 5.812716888195858e-08,
+            "iteration_3_test_loss": 0.00040314440293708704,
+            "iteration_3_test_mse_loss": 5.812716003798816e-08,
+            "iteration_4_test_loss": 0.0004031444034693054,
+            "iteration_4_test_mse_loss": 5.812715651203996e-08,
+            "iteration_5_test_loss": 0.0004031444028542928,
+            "iteration_5_test_mse_loss": 5.812715545492588e-08,
+            "test_loss_after_training": 0.0004031444028072154,
+            "test_loss_after_training_mse": 5.812715502419536e-08
+        }
+    }
+}

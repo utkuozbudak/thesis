@@ -5,6 +5,8 @@ src/training/__pycache__
 data/wave
 data/__pycache__/
 data/burgers
-outputs/
+outputs/wave1
+outputs/wave2
+outputs/deeponet
 outputs/deeponet/results
 src/training/experiment_runner_pod.py
