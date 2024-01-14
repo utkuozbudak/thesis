@@ -7,5 +7,4 @@ data/__pycache__/
 data/burgers
 outputs/
 outputs/deeponet/results
-src/training/experiment_runner_pod
-src/training/linear.py
+src/training/experiment_runner_pod.py
